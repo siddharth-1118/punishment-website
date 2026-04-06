@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | Punishment Story</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body class="page-enter">
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="justice"></i></div>
+        Punishment <span>Story</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="write.html" class="nav-link">Write</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="nav-btn theme-toggle"><i data-lucide="moon"></i></button>
+        <button class="menu-toggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="profile-main section-lg">
+    <div class="container profile-layout">
+       <!-- ── Profile Header ── -->
+       <header class="profile-header glass p-xl mb-xl">
+          <div class="flex-between align-center mobile-stack">
+             <div class="profile-info-group">
+                <img src="https://i.pravatar.cc/150?u=stranger" class="profile-avatar mb-md" id="user-avatar">
+                <div class="info-text">
+                   <h1 class="display-lg" id="user-name">Stranger</h1>
+                   <div class="flex gap-sm align-center">
+                      <span class="badge badge-gold" id="user-alignment">Moral Alignment: Neutral</span>
+                      <span class="text-muted body-sm">Member since Apr 2026</span>
+                   </div>
+                </div>
+             </div>
+             <div class="profile-actions-group">
+                <button class="btn btn-secondary btn-sm"><i data-lucide="edit-3"></i> Edit Bio</button>
+                <button class="btn btn-outline-red btn-sm"><i data-lucide="log-out"></i> Sign Out</button>
+             </div>
+          </div>
+          <div class="divider"></div>
+          <p class="body-md text-secondary" id="user-bio">A silent observer in the halls of justice. Seeking truth through the echoes of the past.</p>
+       </header>
+
+       <!-- ── Stats & Achievements Row ── -->
+       <div class="profile-grid">
+          <section class="profile-stats">
+             <h2 class="heading-md mb-lg">Psychological Footprint</h2>
+             <div class="stats-row">
+                <div class="glass-card stat-card p-lg">
+                   <div class="icon-circle mb-sm"><i data-lucide="book-open"></i></div>
+                   <h3 class="heading-lg" id="stat-read">0</h3>
+                   <span class="caption text-muted">Stories Read</span>
+                </div>
+                <div class="glass-card stat-card p-lg">
+                   <div class="icon-circle mb-sm"><i data-lucide="vote"></i></div>
+                   <h3 class="heading-lg" id="stat-votes">0</h3>
+                   <span class="caption text-muted">Votes Cast</span>
+                </div>
+                <div class="glass-card stat-card p-lg">
+                   <div class="icon-circle mb-sm"><i data-lucide="award"></i></div>
+                   <h3 class="heading-lg" id="stat-badges">0</h3>
+                   <span class="caption text-muted">Badges Earned</span>
+                </div>
+             </div>
+          </section>
+
+          <section class="profile-badges">
+             <h2 class="heading-md mb-lg">Achievements</h2>
+             <div class="badges-grid" id="badges-container">
+                <!-- Rendered via JS -->
+             </div>
+          </section>
+       </div>
+
+       <!-- ── Continue Reading Section ── -->
+       <section class="section">
+          <h2 class="heading-md mb-lg">Continue Reading</h2>
+          <div class="story-grid" id="saved-stories">
+             <!-- Rendered via JS -->
+          </div>
+       </section>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

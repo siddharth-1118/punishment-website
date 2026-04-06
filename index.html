@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punishment Story | Every action echoes</title>
+  <meta name="description"
+    content="Explore psychological narratives, moral dilemmas, and the consequences of justice. A story platform where every choice casts a shadow.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/homepage.css">
+</head>
+
+<body class="page-enter homepage-body">
+
+
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="justice"></i></div>
+        Punishment <span>Story</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="write.html" class="nav-link">Write</a>
+      </div>
+
+      <div class="nav-actions">
+        <button class="nav-btn search-btn" title="Search"><i data-lucide="search"></i></button>
+        <button class="nav-btn theme-toggle" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <a href="profile.html" class="nav-profile-btn nav-profile-link">
+          <img src="https://i.pravatar.cc/150?u=stranger" alt="Profile">
+        </a>
+        <button class="menu-toggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Mobile Menu ── -->
+
+
+  <!-- ── Hero Section ── -->
+  <header class="hero">
+    <div id="hero-bg-canvas" class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-text animate-fadeInUp">
+        <h1 class="display-xl">Every choice casts a <span class="glow-text-red">shadow</span>. <br>Every action echoes
+        </h1>
+        <p class="body-lg text-secondary">A psychological journey into the weight of consequence and the complexity of
+          justice.A story of truth, betrayal, and consequence.The verdict is yours.</p>
+        <div class="hero-btns flex gap-md">
+          <a href="#explore" class="btn btn-primary btn-lg">Start Reading</a>
+          <a href="explore.html" class="btn btn-secondary btn-lg">Explore Themes</a>
+          <a href="story.html?id=s4" class="btn btn-outline-red btn-lg blood-splatter-btn">The Verdict</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><i data-lucide="chevron-down"></i></div>
+  </header>
+
+  <main>
+    <!-- ── Featured Carousel ── -->
+    <section class="section-sm" id="explore">
+      <div class="container">
+        <div class="flex-between gap-md mb-xl">
+          <h2 class="heading-xl">Most Disturbing</h2>
+          <a href="explore.html" class="btn btn-sm btn-outline-red">See All</a>
+        </div>
+        <div class="carousel-wrapper" id="carousel-disturbing">
+          <!-- Rendered via JS -->
+          <div class="spinner-container">
+            <div class="spinner"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Category Grid ── -->
+    <section class="section bg-raised">
+      <div class="container text-center mb-xl">
+        <h2 class="heading-xl mb-sm">Navigate the Moral Spectrum</h2>
+        <p class="text-muted">Choose your path through our psychological landscape</p>
+      </div>
+      <div class="container">
+        <div class="category-grid" id="homepage-categories">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Featured Row 2 ── -->
+    <section class="section">
+      <div class="container">
+        <div class="flex-between gap-md mb-xl">
+          <h2 class="heading-xl">Moral Dilemmas</h2>
+          <a href="explore.html" class="btn btn-sm btn-outline-red">See All</a>
+        </div>
+        <div class="carousel-wrapper" id="carousel-moral">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Question of the Day ── -->
+    <section class="section bg-void">
+      <div class="container">
+        <div class="qotd-layout">
+          <div class="qotd-content">
+            <span class="badge badge-gold mb-sm">Engagement</span>
+            <h2 class="display-lg mb-md" id="qotd-title">Is harsh punishment ever justified?</h2>
+            <p class="body-md text-secondary mb-xl">Cast your vote and join the debate. Every voice contributes to the
+              community's moral alignment.</p>
+            <div class="qotd-poll" id="qotd-poll-container">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+          <div class="qotd-image-side">
+            <div class="glass-card qotd-result-card animate-fadeInUp">
+              <div class="result-header flex-between mb-md">
+                <span class="heading-md">Current Consensus</span>
+                <span class="tag">Live Data</span>
+              </div>
+              <div id="qotd-result-bars">
+                <!-- Rendered via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer section-sm border-t">
+    <div class="container">
+      <div class="flex-between">
+        <div class="footer-logo nav-logo">
+          Punishment <span>Story</span>
+        </div>
+        <div class="footer-links flex gap-lg">
+          <a href="#" class="text-muted body-sm">About</a>
+          <a href="#" class="text-muted body-sm">Privacy</a>
+          <a href="#" class="text-muted body-sm">Terms</a>
+          <a href="#" class="text-muted body-sm">Support</a>
+        </div>
+        <div class="social-links flex gap-sm">
+          <button class="nav-btn"><i data-lucide="twitter"></i></button>
+          <button class="nav-btn"><i data-lucide="github"></i></button>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <p class="text-center text-muted caption">© 2026 Punishment Story. For research purposes only. Explore with
+        caution.</p>
+    </div>
+  </footer>
+
+  <!-- ── Search Modal ── -->
+  <div class="modal-overlay" id="search-modal">
+    <div class="modal-content">
+      <div class="flex-between mb-xl">
+        <h3 class="heading-md">Find your sentence</h3>
+        <button class="modal-close" onclick="document.querySelector('#search-modal').classList.remove('active')">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="input-group">
+        <div class="flex gap-sm">
+          <input type="text" class="text-input" placeholder="Search stories, themes, authors..." style="flex: 1;">
+          <button class="btn btn-primary"><i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="mt-xl">
+        <p class="caption text-muted mb-md">Trending Themes</p>
+        <div class="flex flex-wrap gap-sm">
+          <span class="tag">#justice</span>
+          <span class="tag">#karma</span>
+          <span class="tag">#school-life</span>
+          <span class="tag">#dystopia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/homepage.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

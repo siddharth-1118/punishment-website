@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Punishment Story</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/community.css">
+</head>
+<body class="page-enter">
+
+    <!-- ── Navigation ── -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon"><i data-lucide="justice"></i></div>
+                Punishment <span>Story</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Explore</a>
+                <a href="community.html" class="nav-link active">Community</a>
+                <a href="write.html" class="nav-link">Write</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="nav-btn theme-toggle"><i data-lucide="moon"></i></button>
+                <a href="profile.html" class="nav-profile-btn">
+                    <img src="https://i.pravatar.cc/150?u=stranger" alt="Profile">
+                </a>
+                <button class="menu-toggle"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="community-main section-lg">
+        <div class="container mb-xl text-center">
+            <h1 class="display-lg mb-md">Community Forums</h1>
+            <p class="text-secondary body-md">Debate the ethical implications of recent stories and shape the future of justice.</p>
+        </div>
+
+        <div class="container community-layout">
+            <!-- ── Main Sidebar (Topics) ── -->
+            <aside class="community-topics flex flex-col gap-lg">
+                <div class="glass p-lg">
+                    <h3 class="heading-sm mb-md">Hot Topics</h3>
+                    <div class="flex flex-col gap-sm">
+                        <a href="#" class="topic-link active">#JusticeReform</a>
+                        <a href="#" class="topic-link">#TheEchoCabinet</a>
+                        <a href="#" class="topic-link">#MoralAlignment</a>
+                        <a href="#" class="topic-link">#DystopianRights</a>
+                        <a href="#" class="topic-link">#TheSilentJury</a>
+                    </div>
+                </div>
+
+                <div class="glass p-lg">
+                    <h3 class="heading-sm mb-md">Top Contributors</h3>
+                    <div class="flex flex-col gap-md">
+                        <div class="contributor flex gap-sm align-center">
+                            <img src="https://i.pravatar.cc/150?u=user1" class="profile-avatar-sm">
+                            <div>
+                                <h4 class="body-sm font-bold">Moralist_Jay</h4>
+                                <p class="caption text-muted">89 insights</p>
+                            </div>
+                        </div>
+                        <div class="contributor flex gap-sm align-center">
+                            <img src="https://i.pravatar.cc/150?u=user2" class="profile-avatar-sm">
+                            <div>
+                                <h4 class="body-sm font-bold">Silent_Watcher</h4>
+                                <p class="caption text-muted">124 insights</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- ── Main Thread Feed ── -->
+            <div class="community-feed">
+                <div class="flex-between mb-lg">
+                    <h2 class="heading-md">Recent Debates</h2>
+                    <button class="btn btn-primary btn-sm"><i data-lucide="plus"></i> Start Debate</button>
+                </div>
+
+                <div class="debate-feed flex flex-col gap-lg" id="debate-list">
+                    <!-- Debate cards rendered via JS -->
+                </div>
+            </div>
+
+            <!-- ── Live Events Section ── -->
+            <aside class="community-events flex flex-col gap-lg">
+                <div class="glass p-lg glow-red-sm border-red">
+                    <h3 class="heading-sm mb-md">Live Event</h3>
+                    <div class="event-card">
+                        <p class="body-sm font-bold mb-xs">Weekly Writing Contest</p>
+                        <p class="caption text-muted mb-md">Write a punishment ending for "The Broken Vow".</p>
+                        <div class="timer flex gap-sm align-center mb-md">
+                            <i data-lucide="clock" style="width: 14px;"></i>
+                            <span class="tag">2d 14h 32m</span>
+                        </div>
+                        <button class="btn btn-primary w-100">Participate</button>
+                    </div>
+                </div>
+
+                <div class="glass p-lg">
+                    <h3 class="heading-sm mb-md">Poll of the Week</h3>
+                    <p class="body-sm mb-md">Should the AI judge be allowed to overrule the human jury?</p>
+                    <div class="flex flex-col gap-sm">
+                        <button class="btn btn-secondary btn-sm">Yes, for objective truth</button>
+                        <button class="btn btn-secondary btn-sm">No, human empathy first</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/community.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

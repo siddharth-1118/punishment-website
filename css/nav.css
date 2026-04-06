@@ -1,0 +1,188 @@
+/* ============================================================
+   NAV.CSS — Punishment Story Navigation
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  z-index: var(--z-nav);
+  transition: all var(--duration-mid) var(--ease-smooth);
+  display: flex;
+  align-items: center;
+}
+
+.navbar.scrolled {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  height: 60px;
+}
+
+.navbar .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.nav-logo span {
+  color: var(--red-mid);
+}
+
+.logo-icon {
+  width: 32px; height: 32px;
+  background: radial-gradient(circle, var(--red-deep) 0%, transparent 80%);
+  border: 2px solid var(--red-mid);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
+}
+
+/* ── Nav Links ───────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--duration-fast);
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--red-mid);
+  transition: width var(--duration-mid) var(--ease-out);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--text-primary);
+}
+
+/* ── Nav Actions ─────────────────────────────────────────── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  transition: all var(--duration-fast);
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+  transform: scale(1.05);
+}
+
+.nav-profile-btn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  transition: all var(--duration-fast);
+}
+
+.nav-profile-btn:hover {
+  border-color: var(--red-mid);
+}
+
+.nav-profile-btn img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
+/* ── Mobile Menu Toggle ──────────────────────────────────── */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 24px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all var(--duration-mid);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none; /* Hide desktop links */
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0; right: -100%;
+    width: 300px; height: 100vh;
+    background: var(--bg-void);
+    backdrop-filter: blur(20px);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 32px;
+    gap: 24px;
+    transition: right var(--duration-mid) var(--ease-out);
+    border-left: 1px solid var(--border);
+  }
+
+  .mobile-menu.active {
+    right: 0;
+  }
+}

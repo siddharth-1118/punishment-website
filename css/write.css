@@ -1,0 +1,146 @@
+/* ============================================================
+   WRITE.CSS — Creator Studio Layout
+   ============================================================ */
+
+.write-main {
+    padding-top: 100px;
+}
+
+.write-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .write-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Editor Container ────────────────────────────────────── */
+.editor-container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    outline: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.title-input:focus {
+    border-bottom: 1px solid var(--border);
+}
+
+.chapter-title-input {
+    background: transparent;
+    border: none;
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    outline: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.chapter-title-input:focus {
+    border-bottom: 1px solid var(--border);
+}
+
+.editor-textarea {
+    flex: 1;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    font-family: var(--font-reading);
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-top: 24px;
+    min-height: 400px;
+}
+
+.tool-btn i {
+    width: 18px; height: 18px;
+}
+
+/* ── Intensity Slider ─────────────────────────────────────── */
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--red-mid);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--red-mid);
+    border-radius: 50%;
+}
+
+/* ── Tag Chips ───────────────────────────────────────────── */
+#tag-pills .tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Toggle Switches ─────────────────────────────────────── */
+.toggle-switch {
+    appearance: none;
+    width: 36px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch:checked {
+    background: var(--red-mid);
+}
+
+.toggle-switch:checked::after {
+    transform: translateX(18px);
+}

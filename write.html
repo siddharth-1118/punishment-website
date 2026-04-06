@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator Studio | Punishment Story</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/write.css">
+</head>
+<body class="page-enter">
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="justice"></i></div>
+        Punishment <span>Story</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="explore.html" class="nav-link">Explore</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="write.html" class="nav-link active">Write</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm mr-sm"><i data-lucide="save"></i> Save Draft</button>
+        <button class="btn btn-primary btn-sm"><i data-lucide="send"></i> Publish</button>
+        <button class="menu-toggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="write-main section-lg">
+    <div class="container write-layout">
+       <!-- ── Editor Section ── -->
+       <div class="editor-container glass p-xl">
+          <input type="text" class="title-input mb-lg" placeholder="Untitled Story" id="story-title-input">
+          
+          <div class="chapter-controls flex-between mb-md">
+             <div class="flex gap-md align-center">
+                <span class="heading-sm">Chapter 1:</span>
+                <input type="text" class="chapter-title-input" placeholder="Chapter Title..." id="chapter-title">
+             </div>
+             <div class="flex gap-sm">
+                <button class="tool-btn" title="Add Chapter"><i data-lucide="plus-circle"></i></button>
+                <button class="tool-btn" title="Delete Chapter"><i data-lucide="trash-2"></i></button>
+             </div>
+          </div>
+
+          <textarea class="editor-textarea" id="main-editor" placeholder="Begin the narrative... Every word carries weight."></textarea>
+          
+          <div class="editor-footer flex-between mt-lg">
+             <span class="caption text-muted" id="word-count">0 words</span>
+             <div class="flex gap-md">
+                <button class="tool-btn" title="Bold"><i data-lucide="bold"></i></button>
+                <button class="tool-btn" title="Italic"><i data-lucide="italic"></i></button>
+                <button class="tool-btn" title="Add Image"><i data-lucide="image"></i></button>
+             </div>
+          </div>
+       </div>
+
+       <!-- ── Sidebar Settings ── -->
+       <aside class="write-settings flex flex-col gap-lg">
+          <div class="glass p-lg">
+             <h3 class="heading-sm mb-md">Story Metadata</h3>
+             <div class="flex flex-col gap-md">
+                <div class="input-group">
+                   <label class="input-label">Intensity Level</label>
+                   <div class="intensity-slider-group">
+                      <input type="range" min="1" max="5" value="3" class="slider" id="intensity-range">
+                      <div class="flex-between mt-sm">
+                         <span class="caption text-muted">Mild</span>
+                         <span class="badge badge-gold" id="intensity-val">Level 3</span>
+                         <span class="caption text-muted">Extreme</span>
+                      </div>
+                   </div>
+                </div>
+
+                <div class="input-group">
+                   <label class="input-label">Theme / Genre</label>
+                   <select class="text-input" id="category-select">
+                      <option value="justice">Justice</option>
+                      <option value="psychological">Psychological</option>
+                      <option value="discipline">Discipline</option>
+                      <option value="dystopian">Dystopian</option>
+                      <option value="karma">Karma</option>
+                   </select>
+                </div>
+
+                <div class="input-group">
+                   <label class="input-label">Tags (Max 5)</label>
+                   <div class="tag-input-wrapper">
+                      <input type="text" class="text-input" id="tag-input" placeholder="Add tag + enter">
+                      <div class="flex flex-wrap gap-xs mt-sm" id="tag-pills"></div>
+                   </div>
+                </div>
+             </div>
+          </div>
+
+          <div class="glass p-lg">
+             <h3 class="heading-sm mb-md">Privacy & Warnings</h3>
+             <div class="flex flex-col gap-sm">
+                <label class="flex-between align-center">
+                   <span class="body-sm">Branching Story</span>
+                   <input type="checkbox" class="toggle-switch">
+                </label>
+                <label class="flex-between align-center">
+                   <span class="body-sm">Content Warning</span>
+                   <input type="checkbox" class="toggle-switch">
+                </label>
+                <label class="flex-between align-center">
+                   <span class="body-sm">Allow Comments</span>
+                   <input type="checkbox" class="toggle-switch" checked>
+                </label>
+             </div>
+          </div>
+
+          <button class="btn btn-secondary w-100" id="preview-btn">Preview Story</button>
+       </aside>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/write.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

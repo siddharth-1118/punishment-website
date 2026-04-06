@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Stories | Punishment Story</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+<body class="page-enter">
+
+  <!-- ── Navigation ── -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="justice"></i></div>
+        Punishment <span>Story</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="explore.html" class="nav-link active">Explore</a>
+        <a href="community.html" class="nav-link">Community</a>
+        <a href="write.html" class="nav-link">Write</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="nav-btn theme-toggle"><i data-lucide="moon"></i></button>
+        <a href="profile.html" class="nav-profile-btn">
+          <img src="https://i.pravatar.cc/150?u=stranger" alt="Profile">
+        </a>
+        <button class="menu-toggle"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="explore-main section-lg">
+    <div class="container mb-xl">
+       <h1 class="display-lg mb-md">Explore Outcomes</h1>
+       <p class="text-secondary body-md">Filter by intensity, moral weight, and theme to discover the consequences you seek.</p>
+    </div>
+
+    <!-- ── Filter Sidebar + Grid Layout ── -->
+    <div class="container explore-layout">
+       <aside class="explore-filters glass p-lg">
+          <div class="filter-section mb-xl">
+             <h3 class="heading-sm mb-md">Search</h3>
+             <div class="input-group">
+                <div class="flex gap-sm">
+                   <input type="text" class="text-input" id="search-input" placeholder="Keyword..." style="width: 100%;">
+                </div>
+             </div>
+          </div>
+
+          <div class="filter-section mb-xl">
+             <h3 class="heading-sm mb-md">Intensity Level</h3>
+             <div class="flex flex-col gap-sm" id="intensity-filters">
+                <label class="flex gap-sm align-center">
+                   <input type="checkbox" value="1" checked> <span>Level 1: Mild</span>
+                </label>
+                <label class="flex gap-sm align-center">
+                   <input type="checkbox" value="2" checked> <span>Level 2: Moderate</span>
+                </label>
+                <label class="flex gap-sm align-center">
+                   <input type="checkbox" value="3" checked> <span>Level 3: Significant</span>
+                </label>
+                <label class="flex gap-sm align-center">
+                   <input type="checkbox" value="4" checked> <span>Level 4: Harsh</span>
+                </label>
+                <label class="flex gap-sm align-center">
+                   <input type="checkbox" value="5" checked> <span>Level 5: Extreme</span>
+                </label>
+             </div>
+          </div>
+
+          <div class="filter-section mb-xl">
+             <h3 class="heading-sm mb-md">Categories</h3>
+             <div class="flex flex-wrap gap-sm" id="category-chips">
+                <!-- Rendered via JS -->
+             </div>
+          </div>
+
+          <button class="btn btn-primary w-100" id="apply-filters">Apply Filters</button>
+          <button class="btn btn-secondary w-100 mt-sm" id="reset-filters">Reset All</button>
+       </aside>
+
+       <div class="explore-content">
+          <div class="flex-between mb-lg">
+             <span class="text-muted" id="results-count">Showing 0 stories</span>
+             <div class="flex gap-md align-center">
+                <span class="caption text-muted">Sort By:</span>
+                <select class="text-input p-xs" id="sort-order">
+                   <option value="newest">Newest First</option>
+                   <option value="intensity-high">Highest Intensity</option>
+                   <option value="intensity-low">Lowest Intensity</option>
+                </select>
+             </div>
+          </div>
+
+          <div class="story-grid" id="explore-story-grid">
+             <!-- Rendered via JS -->
+             <div class="spinner-container"><div class="spinner"></div></div>
+          </div>
+
+          <div class="pagination mt-xl flex-center gap-md">
+             <button class="nav-btn"><i data-lucide="chevron-left"></i></button>
+             <span class="tag active">1</span>
+             <span class="tag">2</span>
+             <span class="tag">3</span>
+             <button class="nav-btn"><i data-lucide="chevron-right"></i></button>
+          </div>
+       </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/explore.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

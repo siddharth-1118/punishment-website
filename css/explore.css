@@ -1,0 +1,98 @@
+/* ============================================================
+   EXPLORE.CSS — Explore Page Sidebar & Grid
+   ============================================================ */
+
+.explore-main {
+    padding-top: 100px;
+}
+
+.explore-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .explore-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Sidebar Filters ─────────────────────────────────────── */
+.explore-filters {
+    position: sticky;
+    top: 100px;
+    border-radius: 16px;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    padding: 24px;
+}
+
+.filter-section h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+}
+
+#intensity-filters label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color var(--duration-fast);
+}
+
+#intensity-filters label:hover {
+    color: var(--text-primary);
+}
+
+#intensity-filters input[type="checkbox"] {
+    accent-color: var(--red-mid);
+    width: 16px;
+    height: 16px;
+}
+
+/* ── Story Grid ─────────────────────────────────────────── */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.explore-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.w-100 { width: 100%; }
+.mt-sm { margin-top: 8px; }
+
+/* ── Pagination ──────────────────────────────────────────── */
+.pagination {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.tag.active {
+    background: var(--red-deep);
+    color: white;
+    border-color: var(--red-mid);
+}
+
+#results-count {
+    font-weight: 500;
+}
+
+select.text-input {
+    cursor: pointer;
+    appearance: none;
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}

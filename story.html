@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandra Story Player</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/story.css">
+</head>
+<body class="story-player-page">
+  <main id="cinema-view" class="cinema-view">
+    <div id="cinema-start-overlay" class="cinema-start-overlay">
+      <div class="cinema-panel">
+        <p class="cinema-kicker">Interactive Video Story</p>
+        <h1 id="cinema-story-title">Chandra's Consequence</h1>
+        <p id="cinema-story-hook">Choose a path and watch what happens next.</p>
+        <button id="start-cinema-btn" class="btn btn-primary btn-lg">Play Story</button>
+      </div>
+    </div>
+
+    <div id="video-stage" class="video-stage hidden">
+      <video id="main-video" preload="auto" playsinline>
+        Your browser does not support the video tag.
+      </video>
+
+      <div id="fallback-stage" class="hidden">
+        <div class="cinema-panel">
+          <p class="cinema-kicker">Video Placeholder</p>
+          <h2 id="fallback-title">Scene</h2>
+          <p id="fallback-text">Add the video file here and continue the story.</p>
+          <button id="fallback-continue-btn" class="btn btn-primary">Continue</button>
+        </div>
+      </div>
+
+      <div id="decision-overlay" class="hidden">
+        <div class="cinema-panel decision-panel">
+          <p class="cinema-kicker">Choose One Path</p>
+          <h2 id="decision-title">What does Chandra do?</h2>
+          <div id="decision-choices" class="decision-choices"></div>
+        </div>
+      </div>
+
+      <div id="ending-overlay" class="hidden">
+        <div class="cinema-panel">
+          <p class="cinema-kicker">Story Finished</p>
+          <h2 id="ending-title">This path is over</h2>
+          <p id="ending-text">Choose play again to restart from the first video.</p>
+          <div class="ending-actions">
+            <button id="replay-story-btn" class="btn btn-primary">Play Again</button>
+            <a href="index.html" class="btn btn-secondary">Back Home</a>
+          </div>
+        </div>
+      </div>
+
+      <button id="skip-scene-btn" class="skip-scene-btn">Skip Scene</button>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/story.js"></script>
+</body>
+</html>

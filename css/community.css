@@ -1,0 +1,93 @@
+/* ============================================================
+   COMMUNITY.CSS — Community Dashboard Layout
+   ============================================================ */
+
+.community-main {
+    padding-top: 100px;
+}
+
+.community-layout {
+    display: grid;
+    grid-template-columns: 240px 1fr 300px;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .community-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 992px) {
+    .community-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Topics Sidebar ─────────────────────────────────────── */
+.topic-link {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+}
+
+.topic-link:hover, .topic-link.active {
+    color: var(--text-primary);
+    background: var(--bg-raised);
+    border-left: 3px solid var(--red-mid);
+}
+
+.profile-avatar-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+/* ── Debate Feed ────────────────────────────────────────── */
+.debate-card {
+    padding: 24px;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s;
+}
+
+.debate-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-4px);
+}
+
+.debate-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.debate-meta {
+    display: flex;
+    gap: 12px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+.w-100 { width: 100%; }
+.mt-sm { margin-top: 8px; }
+.p-lg { padding: 24px; }
+.mb-xs { margin-bottom: 8px; }
+.mb-md { margin-bottom: 24px; }
+.mb-xl { margin-bottom: 48px; }
+.gap-xs { gap: 4px; }
+.gap-md { gap: 16px; }
+.gap-lg { gap: 24px; }
+.flex-col { display: flex; flex-direction: column; }
+.align-center { align-items: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.tag { font-size: 0.7rem; padding: 2px 8px; background: rgba(255, 255, 255, 0.04); }
+.timer { color: var(--red-glow); }
+.glow-red-sm { box-shadow: var(--shadow-red-sm); }
+.border-red { border-color: var(--red-deep); }
