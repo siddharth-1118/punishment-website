@@ -293,20 +293,16 @@ const Homepage = {
     const overlay = document.querySelector('#entry-overlay');
     const entryBtn = document.querySelector('#entry-btn');
     
-    // Check if user already dismissed it this session
-    if (sessionStorage.getItem('entrySplashDismissed') === 'true') {
-      if (overlay) overlay.classList.add('hidden');
-      return;
-    }
-    
     if (overlay) {
+      // Ensure it starts visible
+      overlay.classList.remove('hidden');
+      
       // Disable scroll while overlay is active
       document.body.style.overflow = 'hidden';
 
       entryBtn.addEventListener('click', () => {
         overlay.classList.add('hidden');
         document.body.style.overflow = '';
-        sessionStorage.setItem('entrySplashDismissed', 'true');
       });
     }
   }
