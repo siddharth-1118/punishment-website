@@ -127,7 +127,7 @@ const STORIES = [
     readTime: "20 min",
     category: "Justice",
     tags: ["Branching", "Chandra", "Moral Choice"],
-    hook: "First one video plays, then the viewer chooses what Chandra does next.",
+    hook: "First,one video plays, then the viewer chooses what Chandra does next.",
     isGraph: true,
     nodes: {
       "start": {
