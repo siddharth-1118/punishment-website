@@ -158,14 +158,14 @@ const STORIES = [
         type: "decision",
         title: "What happens next?",
         choices: [
-          { text: "Chandra confesses out of guilt", nextId: "a2a_guilt" },
+          { text: "Chidam confesses out of guilt", nextId: "a2a_guilt" },
           { text: "Police discovers the truth", nextId: "a2b_police" }
         ]
       },
       "a2a_guilt": {
         id: "a2a_guilt",
         type: "episode",
-        title: "Chandra Confesses Out of Guilt",
+        title: "Chidam Confesses Out of Guilt",
         videoUrl: "episode3.mp4",
         next: []
       },
