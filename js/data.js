@@ -203,7 +203,7 @@ const STORIES = [
         id: "b2b_reveals",
         type: "episode",
         title: "Reveal the Truth",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-at-night-41042-large.mp4",
+        videoUrl: "episode6.mp4",
         next: []
       }
     }
