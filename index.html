@@ -23,10 +23,7 @@
 </head>
 
 <body class="page-enter homepage-body">
-
-
-
-  <!-- ── Navigation ── -->
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
@@ -52,10 +49,7 @@
     </div>
   </nav>
 
-  <!-- ── Mobile Menu ── -->
-
-
-  <!-- ── Hero Section ── -->
+  <!-- Hero Section -->
   <header class="hero">
     <div id="hero-bg-canvas" class="hero-bg"></div>
     <div class="container hero-content">
@@ -63,7 +57,7 @@
         <h1 class="display-xl">Every choice casts a <span class="glow-text-red">shadow</span>. <br>Every action echoes
         </h1>
         <p class="body-lg text-secondary">A psychological journey into the weight of consequence and the complexity of
-          justice.A story of truth, betrayal, and consequence.The verdict is yours.</p>
+          justice. A story of truth, betrayal, and consequence. The verdict is yours.</p>
         <div class="hero-btns flex gap-md">
           <a href="#explore" class="btn btn-primary btn-lg">Start Reading</a>
           <a href="explore.html" class="btn btn-secondary btn-lg">Explore Themes</a>
@@ -75,7 +69,7 @@
   </header>
 
   <main>
-    <!-- ── Featured Carousel ── -->
+    <!-- Featured Carousel -->
     <section class="section-sm" id="explore">
       <div class="container">
         <div class="flex-between gap-md mb-xl">
@@ -91,7 +85,7 @@
       </div>
     </section>
 
-    <!-- ── Category Grid ── -->
+    <!-- Category Grid -->
     <section class="section bg-raised">
       <div class="container text-center mb-xl">
         <h2 class="heading-xl mb-sm">Navigate the Moral Spectrum</h2>
@@ -104,7 +98,7 @@
       </div>
     </section>
 
-    <!-- ── Featured Row 2 ── -->
+    <!-- Featured Row 2 -->
     <section class="section">
       <div class="container">
         <div class="flex-between gap-md mb-xl">
@@ -117,7 +111,7 @@
       </div>
     </section>
 
-    <!-- ── Question of the Day ── -->
+    <!-- Question of the Day -->
     <section class="section bg-void">
       <div class="container">
         <div class="qotd-layout">
@@ -146,7 +140,7 @@
     </section>
   </main>
 
-  <!-- ── Footer ── -->
+  <!-- Footer -->
   <footer class="footer section-sm border-t">
     <div class="container">
       <div class="flex-between">
@@ -165,12 +159,12 @@
         </div>
       </div>
       <div class="divider"></div>
-      <p class="text-center text-muted caption">© 2026 Punishment Story. For research purposes only. Explore with
+      <p class="text-center text-muted caption">&copy; 2026 Punishment Story. For research purposes only. Explore with
         caution.</p>
     </div>
   </footer>
 
-  <!-- ── Search Modal ── -->
+  <!-- Search Modal -->
   <div class="modal-overlay" id="search-modal">
     <div class="modal-content">
       <div class="flex-between mb-xl">
@@ -192,6 +186,207 @@
           <span class="tag">#karma</span>
           <span class="tag">#school-life</span>
           <span class="tag">#dystopia</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Justice Narrative Modal -->
+  <div class="modal-overlay justice-modal" id="justice-modal">
+    <div class="justice-modal-content">
+      <div class="justice-page-bar">
+        <div>
+          <p class="justice-eyebrow">Moral Spectrum</p>
+          <h2 class="justice-page-title">Justice</h2>
+        </div>
+        <button class="modal-close justice-page-close" onclick="Homepage.closeJusticeModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="justice-story-container">
+        <div class="justice-story-text">
+          <p class="story-fade">When the judge announced the sentence, the courtroom fell silent.</p>
+          <p class="story-fade emphasis">Death.</p>
+          <p class="story-fade emphasis">For Chandara.</p>
+          <p class="story-fade">The law had done its job.</p>
+          <p class="story-fade">A woman had confessed&mdash;repeatedly, consistently, without coercion. Witnesses
+            aligned. Statements matched. The system worked.</p>
+          <p class="story-fade">Yet something felt&hellip; wrong.</p>
+          <p class="story-fade">Chidam collapsed, screaming the truth too late. Dukhiram echoed it. But truth, arriving
+            after order, sounded like chaos.</p>
+          <p class="story-fade">Chandara stood still.</p>
+          <p class="story-fade">She did not look at her husband.</p>
+          <p class="story-fade">The judge watched her carefully.</p>
+          <p class="story-fade">&ldquo;Do you have anything to say?&rdquo;</p>
+          <p class="story-fade">She replied calmly:</p>
+          <blockquote class="story-fade justice-quote">
+            &ldquo;You wanted a truth that fit your system. I gave it to you.&rdquo;
+          </blockquote>
+          <p class="story-fade">The law had no answer to that.</p>
+          <p class="story-fade">And so, justice was served.</p>
+          <p class="story-fade">But no one left the courtroom believing it had been done.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Psychological Narrative Modal -->
+  <div class="modal-overlay justice-modal" id="psychological-modal">
+    <div class="justice-modal-content">
+      <div class="justice-page-bar">
+        <div>
+          <p class="justice-eyebrow">Moral Spectrum</p>
+          <h2 class="justice-page-title">Psychological</h2>
+        </div>
+        <button class="modal-close justice-page-close" onclick="Homepage.closePsychologicalModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="justice-story-container">
+        <div class="justice-story-text">
+          <p class="story-fade">Chandara stopped speaking the moment Chidam asked her to lie.</p>
+          <p class="story-fade">Not out of fear.</p>
+          <p class="story-fade">But clarity.</p>
+          <p class="story-fade">She watched him carefully&mdash;his trembling hands, his dry throat, his desperate need to save his brother.</p>
+          <p class="story-fade">If I obey&hellip; I live.</p>
+          <p class="story-fade">If I refuse&hellip; everything breaks.</p>
+          <p class="story-fade">But something inside her had already broken.</p>
+          <p class="story-fade">Not when Radha died.</p>
+          <p class="story-fade">Not when the police came.</p>
+          <p class="story-fade">But when her husband chose.</p>
+          <p class="story-fade">Chose his brother over her.</p>
+          <p class="story-fade">From that moment, she withdrew.</p>
+          <p class="story-fade">Each question the police asked&hellip; she answered simply.</p>
+          <p class="story-fade">&ldquo;Yes.&rdquo;</p>
+          <p class="story-fade">&ldquo;I killed her.&rdquo;</p>
+          <p class="story-fade">No defense. No justification.</p>
+          <p class="story-fade">Because this was no longer about survival.</p>
+          <p class="story-fade">It was about control.</p>
+          <p class="story-fade">The only thing left she could control&hellip;</p>
+          <p class="story-fade">Was her own ending.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Discipline Narrative Modal -->
+  <div class="modal-overlay justice-modal" id="discipline-modal">
+    <div class="justice-modal-content">
+      <div class="justice-page-bar">
+        <div>
+          <p class="justice-eyebrow">Moral Spectrum</p>
+          <h2 class="justice-page-title">Discipline</h2>
+        </div>
+        <button class="modal-close justice-page-close" onclick="Homepage.closeDisciplineModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="justice-story-container">
+        <div class="justice-story-text">
+          <p class="story-fade">The village had its own hierarchy.</p>
+          <p class="story-fade">Men decided. Women endured.</p>
+          <p class="story-fade">Truth was flexible.</p>
+          <p class="story-fade">Obedience was not.</p>
+          <p class="story-fade">When Chidam told Chandara to confess, it wasn&rsquo;t a request.</p>
+          <p class="story-fade">It was an expectation.</p>
+          <p class="story-fade">A role.</p>
+          <p class="story-fade">A rule.</p>
+          <p class="story-fade">Wives protected husbands.</p>
+          <p class="story-fade">Families protected themselves.</p>
+          <p class="story-fade">Order had to be maintained.</p>
+          <p class="story-fade">Even if truth was buried beneath it.</p>
+          <p class="story-fade">Chandara listened.</p>
+          <p class="story-fade">But something went wrong.</p>
+          <p class="story-fade">She didn&rsquo;t follow the script.</p>
+          <p class="story-fade">She didn&rsquo;t defend herself.</p>
+          <p class="story-fade">Didn&rsquo;t resist.</p>
+          <p class="story-fade">Didn&rsquo;t argue.</p>
+          <p class="story-fade">She simply&hellip; accepted.</p>
+          <p class="story-fade">And in doing so, she broke the system.</p>
+          <p class="story-fade">Because a system built on obedience cannot survive someone who obeys too completely.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dystopian Narrative Modal -->
+  <div class="modal-overlay justice-modal" id="dystopian-modal">
+    <div class="justice-modal-content">
+      <div class="justice-page-bar">
+        <div>
+          <p class="justice-eyebrow">Moral Spectrum</p>
+          <h2 class="justice-page-title">Dystopian</h2>
+        </div>
+        <button class="modal-close justice-page-close" onclick="Homepage.closeDystopianModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="justice-story-container">
+        <div class="justice-story-text">
+          <p class="story-fade">In this world, individuals didn&rsquo;t matter.</p>
+          <p class="story-fade">Roles did.</p>
+          <p class="story-fade">If a crime disrupted order, someone had to fill the space of the guilty.</p>
+          <p class="story-fade">It didn&rsquo;t have to be the right person.</p>
+          <p class="story-fade">Just a person.</p>
+          <p class="story-fade">Dukhiram killed.</p>
+          <p class="story-fade">But Dukhiram was needed.</p>
+          <p class="story-fade">A worker. A provider. A body that kept the machine running.</p>
+          <p class="story-fade">Chandara?</p>
+          <p class="story-fade">Replaceable.</p>
+          <p class="story-fade">So the story adjusted itself.</p>
+          <p class="story-fade">The narrative shifted.</p>
+          <p class="story-fade">Witnesses aligned.</p>
+          <p class="story-fade">Truth rearranged.</p>
+          <p class="story-fade">And Chandara stepped into the role assigned to her.</p>
+          <p class="story-fade">Not because she believed it.</p>
+          <p class="story-fade">But because resistance was meaningless.</p>
+          <p class="story-fade">In a system like this&hellip;</p>
+          <p class="story-fade">Punishment isn&rsquo;t about guilt.</p>
+          <p class="story-fade">It&rsquo;s about balance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Karma Narrative Modal -->
+  <div class="modal-overlay justice-modal" id="karma-modal">
+    <div class="justice-modal-content">
+      <div class="justice-page-bar">
+        <div>
+          <p class="justice-eyebrow">Moral Spectrum</p>
+          <h2 class="justice-page-title">Karma</h2>
+        </div>
+        <button class="modal-close justice-page-close" onclick="Homepage.closeKarmaModal()">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="justice-story-container">
+        <div class="justice-story-text">
+          <p class="story-fade">Chidam thought he was making a small choice.</p>
+          <p class="story-fade">Just a lie.</p>
+          <p class="story-fade">Just a moment.</p>
+          <p class="story-fade">Just enough to protect his brother.</p>
+          <p class="story-fade">But consequences don&rsquo;t disappear.</p>
+          <p class="story-fade">They wait.</p>
+          <p class="story-fade">They shift.</p>
+          <p class="story-fade">They return.</p>
+          <p class="story-fade">At first, everything seemed under control.</p>
+          <p class="story-fade">The story spread.</p>
+          <p class="story-fade">The village believed it.</p>
+          <p class="story-fade">The police accepted it.</p>
+          <p class="story-fade">But Chandara&hellip;</p>
+          <p class="story-fade">She didn&rsquo;t cooperate.</p>
+          <p class="story-fade">She didn&rsquo;t fight either.</p>
+          <p class="story-fade">She simply let the lie grow.</p>
+          <p class="story-fade">Fed it.</p>
+          <p class="story-fade">Strengthened it.</p>
+          <p class="story-fade">Until it became unstoppable.</p>
+          <p class="story-fade">And when it finally came back&mdash;</p>
+          <p class="story-fade">It didn&rsquo;t strike Dukhiram.</p>
+          <p class="story-fade">It didn&rsquo;t strike the law.</p>
+          <p class="story-fade">It struck Chidam.</p>
+          <p class="story-fade">Because the punishment he tried to redirect&hellip;</p>
+          <p class="story-fade">Was never his to escape.</p>
         </div>
       </div>
     </div>

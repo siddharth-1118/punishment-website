@@ -157,11 +157,15 @@
 
 .category-tile {
   position: relative;
+  appearance: none;
+  width: 100%;
   padding: 40px 24px;
   background: var(--bg-raised);
   border: 1px solid var(--border);
   border-radius: 12px;
   text-align: center;
+  font: inherit;
+  color: inherit;
   transition: all var(--duration-mid) var(--ease-spring);
   overflow: hidden;
   cursor: pointer;
@@ -172,6 +176,12 @@
   background: var(--bg-elevated);
   border-color: var(--red-deep);
   box-shadow: var(--shadow-red-sm);
+}
+
+.category-tile:focus-visible {
+  outline: 2px solid var(--red-mid);
+  outline-offset: 4px;
+  transform: translateY(-3px);
 }
 
 .category-tile .tile-icon {

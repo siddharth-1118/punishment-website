@@ -45,7 +45,41 @@
 }
 
 .homepage-body {
-  background: url('../assets/images/image.png') no-repeat center bottom / cover fixed;
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.06), transparent 24%),
+    radial-gradient(circle at 82% 12%, rgba(255, 255, 255, 0.04), transparent 22%),
+    linear-gradient(135deg, #050505 0%, #090909 42%, #020202 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+.homepage-body::before,
+.homepage-body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.homepage-body::before {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.045), transparent 24%),
+    radial-gradient(circle at 70% 18%, rgba(255, 255, 255, 0.03), transparent 18%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.025), transparent 20%);
+  filter: blur(6px);
+  animation: homepageAtmosphere 20s ease-in-out infinite alternate;
+}
+
+.homepage-body::after {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+  opacity: 0.35;
+  animation: homepageGridDrift 26s linear infinite;
 }
 
 .blood-splatter-btn {
@@ -155,6 +189,38 @@
 }
 
 /* ── Animated Background Bits ────────────────────────────── */
+@keyframes homepageAtmosphere {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate3d(2%, 2%, 0) scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes homepageGridDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(32px, 24px, 0);
+  }
+}
+
+@keyframes homepageFogDrift {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1.08);
+  }
+}
+
 .hero-bg::before {
   content: '';
   position: absolute;
@@ -162,8 +228,10 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(139, 0, 0, 0.05) 0%, transparent 60%);
-  animation: fogDrift 30s linear infinite;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.045) 0%, transparent 58%),
+    radial-gradient(circle at 30% 45%, rgba(255, 255, 255, 0.025) 0%, transparent 30%);
+  animation: homepageFogDrift 24s linear infinite;
 }
 
 .scroll-indicator {
@@ -297,6 +365,187 @@
   background: var(--text-muted);
 }
 
+.justice-modal {
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.06), transparent 28%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.04), transparent 24%),
+    linear-gradient(180deg, rgba(3, 3, 3, 0.94), rgba(0, 0, 0, 0.99));
+  backdrop-filter: blur(14px);
+  animation: spectrumBackdropShift 14s ease-in-out infinite alternate;
+}
+
+.justice-modal-content {
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 24px 56px;
+  overflow-y: auto;
+  background:
+    linear-gradient(180deg, rgba(8, 8, 8, 0.98) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.justice-page-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 18px 0 22px;
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0.96), rgba(6, 6, 6, 0.82), transparent);
+}
+
+.justice-eyebrow {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.justice-page-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  line-height: 0.95;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  animation: titleGlowPulse 4.8s ease-in-out infinite;
+}
+
+.justice-page-close {
+  flex-shrink: 0;
+}
+
+.justice-story-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0 48px;
+}
+
+.justice-story-text {
+  max-width: 760px;
+  padding: 40px clamp(24px, 4vw, 56px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(20, 20, 20, 0.94), rgba(8, 8, 8, 0.98)),
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent 28%);
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: panelRiseIn 700ms var(--ease-out) both;
+}
+
+.story-fade {
+  margin: 0 0 18px;
+  color: rgba(245, 245, 245, 0.92);
+  font-size: clamp(1.05rem, 1.2vw, 1.18rem);
+  line-height: 1.9;
+  animation: lineFadeIn 700ms ease both;
+}
+
+.story-fade.emphasis {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: clamp(1.5rem, 2.6vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.justice-quote {
+  margin: 28px 0;
+  padding: 24px 28px;
+  border-left: 4px solid rgba(255, 255, 255, 0.72);
+  border-radius: 0 18px 18px 0;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fffafa;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.8;
+  animation: quoteFloat 5.2s ease-in-out infinite;
+}
+
+.justice-story-text .story-fade:nth-child(1) { animation-delay: 80ms; }
+.justice-story-text .story-fade:nth-child(2) { animation-delay: 130ms; }
+.justice-story-text .story-fade:nth-child(3) { animation-delay: 180ms; }
+.justice-story-text .story-fade:nth-child(4) { animation-delay: 230ms; }
+.justice-story-text .story-fade:nth-child(5) { animation-delay: 280ms; }
+.justice-story-text .story-fade:nth-child(6) { animation-delay: 330ms; }
+.justice-story-text .story-fade:nth-child(7) { animation-delay: 380ms; }
+.justice-story-text .story-fade:nth-child(8) { animation-delay: 430ms; }
+.justice-story-text .story-fade:nth-child(9) { animation-delay: 480ms; }
+.justice-story-text .story-fade:nth-child(10) { animation-delay: 530ms; }
+.justice-story-text .story-fade:nth-child(11) { animation-delay: 580ms; }
+.justice-story-text .story-fade:nth-child(12) { animation-delay: 630ms; }
+
+@keyframes spectrumBackdropShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0 0;
+  }
+
+  100% {
+    background-position: 8% 4%, 92% 3%, 0 0;
+  }
+}
+
+@keyframes panelRiseIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.985);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lineFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes quoteFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleGlowPulse {
+  0% {
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    text-shadow: 0 0 22px rgba(255, 255, 255, 0.12);
+  }
+
+  100% {
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
 /* ── Footer ──────────────────────────────────────────────── */
 .footer-logo {
   font-size: 1.2rem;
@@ -312,6 +561,20 @@
 }
 
 @media (max-width: 768px) {
+  .justice-modal-content {
+    padding: 20px 16px 40px;
+  }
+
+  .justice-page-bar {
+    margin-bottom: 24px;
+    padding-top: 4px;
+  }
+
+  .justice-story-text {
+    padding: 28px 20px;
+    border-radius: 22px;
+  }
+
   .footer .flex-between {
     flex-direction: column;
     gap: 32px;

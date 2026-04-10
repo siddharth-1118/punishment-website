@@ -8,15 +8,21 @@ const Homepage = {
     this.renderCategories();
     this.renderQOTD();
     this.setupHeroParticles();
+    this.setupCategoryActions();
+    this.setupModalInteractions();
 
     // Smooth scroll for hero buttons
-    document.querySelector('a[href^="#"]').addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.querySelector(e.target.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+    const heroAnchor = document.querySelector('a[href^="#"]');
+    if (heroAnchor) {
+      heroAnchor.addEventListener('click', (e) => {
+        e.preventDefault();
+        const href = e.currentTarget.getAttribute('href');
+        const target = href ? document.querySelector(href) : null;
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
 
     console.log("Homepage Logic Loaded");
   },
@@ -76,12 +82,108 @@ const Homepage = {
     if (!container) return;
 
     container.innerHTML = CATEGORIES.map(cat => `
-      <div class="category-tile" onclick="window.location.href='explore.html?cat=${cat.id}'">
+      <button
+        type="button"
+        class="category-tile"
+        onclick="${cat.id === 'cat-1'
+          ? 'Homepage.showJusticeModal()'
+          : cat.id === 'cat-2'
+            ? 'Homepage.showPsychologicalModal()'
+            : cat.id === 'cat-3'
+              ? 'Homepage.showDisciplineModal()'
+              : cat.id === 'cat-4'
+                ? 'Homepage.showDystopianModal()'
+                : cat.id === 'cat-5'
+                  ? 'Homepage.showKarmaModal()'
+            : `Homepage.openCategoryPage('${cat.id}')`}"
+      >
         <span class="tile-icon">${cat.icon}</span>
         <h3>${cat.name}</h3>
         <p>${cat.description}</p>
-      </div>
+      </button>
     `).join('');
+  },
+
+  setupCategoryActions() {},
+
+  openCategoryPage(categoryId) {
+    window.location.href = `explore.html?cat=${categoryId}`;
+  },
+
+  showJusticeModal() {
+    this.openModal('#justice-modal');
+  },
+
+  showPsychologicalModal() {
+    this.openModal('#psychological-modal');
+  },
+
+  showDisciplineModal() {
+    this.openModal('#discipline-modal');
+  },
+
+  showDystopianModal() {
+    this.openModal('#dystopian-modal');
+  },
+
+  showKarmaModal() {
+    this.openModal('#karma-modal');
+  },
+
+  closeJusticeModal() {
+    this.closeModal('#justice-modal');
+  },
+
+  closePsychologicalModal() {
+    this.closeModal('#psychological-modal');
+  },
+
+  closeDisciplineModal() {
+    this.closeModal('#discipline-modal');
+  },
+
+  closeDystopianModal() {
+    this.closeModal('#dystopian-modal');
+  },
+
+  closeKarmaModal() {
+    this.closeModal('#karma-modal');
+  },
+
+  openModal(selector) {
+    const modal = document.querySelector(selector);
+    if (!modal) return;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  },
+
+  closeModal(selector) {
+    const modal = document.querySelector(selector);
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    document.body.style.overflow = document.querySelector('.modal-overlay.active') ? 'hidden' : '';
+  },
+
+  setupModalInteractions() {
+    document.querySelectorAll('.modal-overlay').forEach((modal) => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = document.querySelector('.modal-overlay.active') ? 'hidden' : '';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach((modal) => {
+          modal.classList.remove('active');
+        });
+        document.body.style.overflow = '';
+      }
+    });
   },
 
   // ── Question of the Day ───────────────────────────────────
