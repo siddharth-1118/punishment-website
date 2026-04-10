@@ -143,7 +143,7 @@ const STORIES = [
         title: "What does Chandra do?",
         choices: [
           { text: "Chandra Refuses", nextId: "a1_ep3" },
-          { text: "Chandra Accepts Blame", nextId: "b1_ep3" }
+          { text: "Chandra Accepts Blame", nextId: "dec3" }
         ]
       },
       "a1_ep3": {
