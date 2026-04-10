@@ -32,15 +32,17 @@ const Homepage = {
     const disturbingContainer = document.querySelector('#carousel-disturbing');
     const moralContainer = document.querySelector('#carousel-moral');
 
-    if (!disturbingContainer || !moralContainer) return;
+    // Disturbing Stories (Intensity 4-5) - Only if container exists
+    if (disturbingContainer) {
+      const disturbingStories = STORIES.filter(s => s.intensity >= 4);
+      disturbingContainer.innerHTML = disturbingStories.map(s => this.createStoryCard(s)).join('');
+    }
 
-    // Disturbing Stories (Intensity 4-5)
-    const disturbingStories = STORIES.filter(s => s.intensity >= 4);
-    disturbingContainer.innerHTML = disturbingStories.map(s => this.createStoryCard(s)).join('');
-
-    // Moral Dilemmas (Intensity 1-3)
-    const moralStories = STORIES.filter(s => s.intensity < 4);
-    moralContainer.innerHTML = moralStories.map(s => this.createStoryCard(s)).join('');
+    // Moral Dilemmas (Intensity 1-3) - Only if container exists
+    if (moralContainer) {
+      const moralStories = STORIES.filter(s => s.intensity < 4);
+      moralContainer.innerHTML = moralStories.map(s => this.createStoryCard(s)).join('');
+    }
     
     // Refresh Lucide icons for new content
     if (window.lucide) window.lucide.createIcons();
