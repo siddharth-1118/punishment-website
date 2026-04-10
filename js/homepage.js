@@ -10,6 +10,7 @@ const Homepage = {
     this.setupHeroParticles();
     this.setupCategoryActions();
     this.setupModalInteractions();
+    this.setupWelcomeBanner();
 
     // Smooth scroll for all anchor buttons
     const heroAnchors = document.querySelectorAll('a[href^="#"]');
@@ -285,6 +286,24 @@ const Homepage = {
         animation-delay: -${Math.random() * 10}s;
       `;
       canvas.appendChild(particle);
+    }
+  },
+
+  setupWelcomeBanner() {
+    const banner = document.querySelector('#welcome-banner');
+    const closeBtn = document.querySelector('#close-banner');
+    
+    // Check if user already closed it
+    if (localStorage.getItem('welcomeBannerClosed') === 'true') {
+      if (banner) banner.classList.remove('active');
+      return;
+    }
+    
+    if (closeBtn && banner) {
+      closeBtn.addEventListener('click', () => {
+        banner.classList.remove('active');
+        localStorage.setItem('welcomeBannerClosed', 'true');
+      });
     }
   }
 };
