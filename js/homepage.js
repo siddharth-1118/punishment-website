@@ -10,7 +10,7 @@ const Homepage = {
     this.setupHeroParticles();
     this.setupCategoryActions();
     this.setupModalInteractions();
-    this.setupWelcomeBanner();
+    this.setupEntryOverlay();
 
     // Smooth scroll for all anchor buttons
     const heroAnchors = document.querySelectorAll('a[href^="#"]');
@@ -289,20 +289,24 @@ const Homepage = {
     }
   },
 
-  setupWelcomeBanner() {
-    const banner = document.querySelector('#welcome-banner');
-    const closeBtn = document.querySelector('#close-banner');
+  setupEntryOverlay() {
+    const overlay = document.querySelector('#entry-overlay');
+    const entryBtn = document.querySelector('#entry-btn');
     
-    // Check if user already closed it
-    if (localStorage.getItem('welcomeBannerClosed') === 'true') {
-      if (banner) banner.classList.remove('active');
+    // Check if user already dismissed it this session
+    if (sessionStorage.getItem('entrySplashDismissed') === 'true') {
+      if (overlay) overlay.classList.add('hidden');
       return;
     }
     
-    if (closeBtn && banner) {
-      closeBtn.addEventListener('click', () => {
-        banner.classList.remove('active');
-        localStorage.setItem('welcomeBannerClosed', 'true');
+    if (overlay) {
+      // Disable scroll while overlay is active
+      document.body.style.overflow = 'hidden';
+
+      entryBtn.addEventListener('click', () => {
+        overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        sessionStorage.setItem('entrySplashDismissed', 'true');
       });
     }
   }
