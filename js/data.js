@@ -196,7 +196,7 @@ const STORIES = [
         id: "b2a_ep4",
         type: "episode",
         title: "Protect the Lie",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-shouting-person-in-the-dark-41147-large.mp4",
+        videoUrl: "episode5.mp4",
         next: []
       },
       "b2b_reveals": {
