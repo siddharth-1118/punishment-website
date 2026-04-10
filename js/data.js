@@ -150,7 +150,7 @@ const STORIES = [
         id: "a1_ep3",
         type: "episode",
         title: "Chandra Refuses",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-mysterious-person-walking-in-the-shadows-of-a-forest-41133-large.mp4",
+        videoUrl: "episode1.mp4",
         next: ["dec2"]
       },
       "dec2": {
