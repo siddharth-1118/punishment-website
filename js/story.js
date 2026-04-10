@@ -36,8 +36,19 @@ const StoryPlayer = {
     const video = document.querySelector('#main-video');
 
     startBtn.onclick = () => {
+      const stage = document.querySelector('#video-stage');
+      
+      // Request Fullscreen
+      if (stage.requestFullscreen) {
+        stage.requestFullscreen();
+      } else if (stage.webkitRequestFullscreen) {
+        stage.webkitRequestFullscreen();
+      } else if (stage.msRequestFullscreen) {
+        stage.msRequestFullscreen();
+      }
+
       document.querySelector('#cinema-start-overlay').classList.add('hidden');
-      document.querySelector('#video-stage').classList.remove('hidden');
+      stage.classList.remove('hidden');
       this.playNode('start');
     };
 

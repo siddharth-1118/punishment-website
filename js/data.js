@@ -134,7 +134,7 @@ const STORIES = [
         id: "start",
         type: "episode",
         title: "Same Original Story",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-sitting-in-a-dark-room-41315-large.mp4",
+        videoUrl: "episode0.mp4",
         next: ["dec1"]
       },
       "dec1": {
