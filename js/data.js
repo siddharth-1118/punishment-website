@@ -186,10 +186,10 @@ const STORIES = [
       "dec3": {
         id: "dec3",
         type: "decision",
-        title: "what will chandra do",
+        title: "What will Chandara do ?",
         choices: [
-          { text: "protect the lie", nextId: "b2a_ep4" },
-          { text: "reveal the truth", nextId: "b2b_reveals" }
+          { text: "Protect the lie", nextId: "b2a_ep4" },
+          { text: " Reveal the truth", nextId: "b2b_reveals" }
         ]
       },
       "b2a_ep4": {
