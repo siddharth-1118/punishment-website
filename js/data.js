@@ -166,14 +166,14 @@ const STORIES = [
         id: "a2a_guilt",
         type: "episode",
         title: "Chandra Confesses Out of Guilt",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-standing-in-front-of-a-bright-light-41270-large.mp4",
+        videoUrl: "episode3.mp4",
         next: []
       },
       "a2b_police": {
         id: "a2b_police",
         type: "episode",
         title: "Police Discovers the Truth",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-police-lights-at-night-reflected-on-the-pavement-4100-large.mp4",
+        videoUrl: "episode3.mp4",
         next: []
       },
       "b1_ep3": {
