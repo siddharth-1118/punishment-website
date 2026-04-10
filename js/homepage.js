@@ -11,10 +11,10 @@ const Homepage = {
     this.setupCategoryActions();
     this.setupModalInteractions();
 
-    // Smooth scroll for hero buttons
-    const heroAnchor = document.querySelector('a[href^="#"]');
-    if (heroAnchor) {
-      heroAnchor.addEventListener('click', (e) => {
+    // Smooth scroll for all anchor buttons
+    const heroAnchors = document.querySelectorAll('a[href^="#"]');
+    heroAnchors.forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
         e.preventDefault();
         const href = e.currentTarget.getAttribute('href');
         const target = href ? document.querySelector(href) : null;
@@ -22,7 +22,7 @@ const Homepage = {
           target.scrollIntoView({ behavior: 'smooth' });
         }
       });
-    }
+    });
 
     console.log("Homepage Logic Loaded");
   },
