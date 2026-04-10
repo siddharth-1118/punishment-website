@@ -186,23 +186,23 @@ const STORIES = [
       "dec3": {
         id: "dec3",
         type: "decision",
-        title: "What happens next?",
+        title: "what will chandra do",
         choices: [
-          { text: "Chandra keeps confessing", nextId: "b2a_ep4" },
-          { text: "Chandra reveals truth", nextId: "b2b_reveals" }
+          { text: "protect the lie", nextId: "b2a_ep4" },
+          { text: "reveal the truth", nextId: "b2b_reveals" }
         ]
       },
       "b2a_ep4": {
         id: "b2a_ep4",
         type: "episode",
-        title: "Chandra Keeps Confessing",
+        title: "Protect the Lie",
         videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-shouting-person-in-the-dark-41147-large.mp4",
         next: []
       },
       "b2b_reveals": {
         id: "b2b_reveals",
         type: "episode",
-        title: "Chandra Reveals Truth",
+        title: "Reveal the Truth",
         videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-at-night-41042-large.mp4",
         next: []
       }
