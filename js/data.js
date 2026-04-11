@@ -143,7 +143,7 @@ const STORIES = [
         title: "What does Chandra do?",
         choices: [
           { text: "Chandra Refuses", nextId: "a1_ep3" },
-          { text: "Chandra Accepts Blame", nextId: "dec3" }
+          { text: "Chandra Accepts Blame", nextId: "b1_ep3" }
         ]
       },
       "a1_ep3": {
@@ -180,7 +180,7 @@ const STORIES = [
         id: "b1_ep3",
         type: "episode",
         title: "Chandra Accepts Blame",
-        videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-man-sitting-in-front-of-a-computer-screen-in-a-dark-room-41312-large.mp4",
+        videoUrl: "episode7.mp4",
         next: ["dec3"]
       },
       "dec3": {
